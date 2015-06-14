@@ -189,6 +189,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cjj-Bi-VSe" id="Ht5-nM-sT6">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="2Lo-Fn-Dfj" kind="unwind" unwindAction="unwindBookmark:" id="jT0-on-YbC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -197,11 +200,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="vPe-AK-0tE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JaB-C8-vMc">
-                            <connections>
-                                <segue destination="2Lo-Fn-Dfj" kind="unwind" unwindAction="unwindMe:" id="B1U-EJ-4Y0"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JaB-C8-vMc"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ywy-56-PBG" userLabel="First Responder" sceneMemberID="firstResponder"/>

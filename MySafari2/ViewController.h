@@ -12,5 +12,7 @@
 
 @property NSArray *bookmarks;
 
+@property NSString *url;
+
 @end
 

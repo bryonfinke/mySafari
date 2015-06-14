@@ -2,8 +2,9 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Bookmark" representedClassName="Bookmark" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Bookmark" positionX="-54" positionY="-9" width="128" height="60"/>
+        <element name="Bookmark" positionX="-54" positionY="-9" width="128" height="75"/>
     </elements>
 </model>

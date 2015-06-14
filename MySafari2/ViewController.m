@@ -30,7 +30,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self goToUrlString:@"http://www.marketsquarehome.com"];
+    if (self.url == nil) {
+        self.url = [NSString stringWithFormat:@"http://www.marketsquarehome.com"];
+    }
+    [self goToUrlString:self.url];
     [self.urlTextField setReturnKeyType:UIReturnKeyDone];
     self.webView.scrollView.delegate = self;
 
@@ -54,6 +57,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self goToUrlString:self.urlTextField.text];
+    [textField resignFirstResponder];
 
     return YES;
 }
@@ -155,6 +159,7 @@ typedef enum ScrollDirection {
     UIAlertAction *addAction = [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         NSManagedObject *bookmark = [NSEntityDescription insertNewObjectForEntityForName:@"Bookmark" inManagedObjectContext: self.moc];
         [bookmark setValue:[self.webView stringByEvaluatingJavaScriptFromString:@"document.title"] forKey:@"title"];
+        [bookmark setValue:[self.webView stringByEvaluatingJavaScriptFromString:self.webView.request.URL.absoluteString] forKey:@"url"];
         [self.moc save:nil];
         [self loadBookmarks];
     }];
@@ -180,6 +185,10 @@ typedef enum ScrollDirection {
 }
 
 -(IBAction)unwindMe:(UIStoryboardSegue *)segue {
+}
+
+-(IBAction)unwindBookmark:(UITableViewCell *)sender {
+    [self goToUrlString:self.url];
 }
 
 @end

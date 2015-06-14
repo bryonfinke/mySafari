@@ -15,8 +15,8 @@
 		7EAAE41C1B2CFAF200814E77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EAAE41B1B2CFAF200814E77 /* Images.xcassets */; };
 		7EAAE41F1B2CFAF200814E77 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EAAE41D1B2CFAF200814E77 /* LaunchScreen.xib */; };
 		7EAAE42B1B2CFAF200814E77 /* MySafari2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE42A1B2CFAF200814E77 /* MySafari2Tests.m */; };
-		7EAAE4361B2CFE3300814E77 /* Bookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE4351B2CFE3300814E77 /* Bookmark.m */; };
 		7EAAE4391B2D138600814E77 /* BookmarksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE4381B2D138600814E77 /* BookmarksTableViewController.m */; };
+		7EAAE4431B2E41CA00814E77 /* Bookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE4421B2E41CA00814E77 /* Bookmark.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +44,10 @@
 		7EAAE4241B2CFAF200814E77 /* MySafari2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySafari2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAAE4291B2CFAF200814E77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EAAE42A1B2CFAF200814E77 /* MySafari2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySafari2Tests.m; sourceTree = "<group>"; };
-		7EAAE4341B2CFE3300814E77 /* Bookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bookmark.h; sourceTree = "<group>"; };
-		7EAAE4351B2CFE3300814E77 /* Bookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bookmark.m; sourceTree = "<group>"; };
 		7EAAE4371B2D138600814E77 /* BookmarksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarksTableViewController.h; sourceTree = "<group>"; };
 		7EAAE4381B2D138600814E77 /* BookmarksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarksTableViewController.m; sourceTree = "<group>"; };
+		7EAAE4411B2E41CA00814E77 /* Bookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bookmark.h; sourceTree = "<group>"; };
+		7EAAE4421B2E41CA00814E77 /* Bookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bookmark.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +134,8 @@
 		7EAAE43A1B2D146700814E77 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7EAAE4341B2CFE3300814E77 /* Bookmark.h */,
-				7EAAE4351B2CFE3300814E77 /* Bookmark.m */,
+				7EAAE4411B2E41CA00814E77 /* Bookmark.h */,
+				7EAAE4421B2E41CA00814E77 /* Bookmark.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -243,8 +243,8 @@
 				7EAAE4111B2CFAF200814E77 /* AppDelegate.m in Sources */,
 				7EAAE40E1B2CFAF200814E77 /* main.m in Sources */,
 				7EAAE4171B2CFAF200814E77 /* ViewController.m in Sources */,
+				7EAAE4431B2E41CA00814E77 /* Bookmark.m in Sources */,
 				7EAAE4391B2D138600814E77 /* BookmarksTableViewController.m in Sources */,
-				7EAAE4361B2CFE3300814E77 /* Bookmark.m in Sources */,
 				7EAAE4141B2CFAF200814E77 /* MySafari2.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,7 +2,7 @@
 //  Bookmark.h
 //  
 //
-//  Created by Bryon Finke on 6/13/15.
+//  Created by Bryon Finke on 6/14/15.
 //
 //
 
@@ -13,5 +13,6 @@
 @interface Bookmark : NSManagedObject
 
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * url;
 
 @end

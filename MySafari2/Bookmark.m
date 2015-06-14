@@ -2,7 +2,7 @@
 //  Bookmark.m
 //  
 //
-//  Created by Bryon Finke on 6/13/15.
+//  Created by Bryon Finke on 6/14/15.
 //
 //
 
@@ -12,5 +12,6 @@
 @implementation Bookmark
 
 @dynamic title;
+@dynamic url;
 
 @end
