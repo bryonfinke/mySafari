@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../Bookmark.h">
+      location = "group:../MySafari2/Bookmark.h">
    </FileRef>
    <FileRef
-      location = "group:../Bookmark.m">
+      location = "group:../MySafari2/Bookmark.m">
    </FileRef>
    <FileRef
       location = "self:MySafari2.xcodeproj">

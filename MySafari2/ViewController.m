@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "Bookmark.h"
+#import "BookmarksTableViewController.h"
 
 @interface ViewController () <UIWebViewDelegate, UITextFieldDelegate, UIScrollViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -22,7 +23,7 @@
 @property (nonatomic, assign) CGFloat lastContentOffset;
 @property (weak, nonatomic) IBOutlet UIView *buttonView;
 @property NSManagedObjectContext *moc;
-@property NSArray *bookmarks;
+@property (weak, nonatomic) IBOutlet UIButton *booksmarksButton;
 @end
 
 @implementation ViewController
@@ -32,14 +33,19 @@
     [self goToUrlString:@"http://www.marketsquarehome.com"];
     [self.urlTextField setReturnKeyType:UIReturnKeyDone];
     self.webView.scrollView.delegate = self;
-    CALayer *TopBorder = [CALayer layer];
 
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.moc = appDelegate.managedObjectContext;
+    [self loadBookmarks];
+
+    CALayer *TopBorder = [CALayer layer];
     TopBorder.frame = CGRectMake(0.0f, 0.0f, self.buttonView.frame.size.width, 1.0f);
     TopBorder.backgroundColor = [UIColor colorWithRed:230/255.0
                                                 green:230/255.0
                                                  blue:230/255.0
                                                 alpha:1].CGColor;
     [self.buttonView.layer addSublayer:TopBorder];
+    self.booksmarksButton.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -148,7 +154,7 @@ typedef enum ScrollDirection {
 
     UIAlertAction *addAction = [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         NSManagedObject *bookmark = [NSEntityDescription insertNewObjectForEntityForName:@"Bookmark" inManagedObjectContext: self.moc];
-        [bookmark setValue:self.webView.request.URL.absoluteString forKey:@"bookmark"];
+        [bookmark setValue:[self.webView stringByEvaluatingJavaScriptFromString:@"document.title"] forKey:@"title"];
         [self.moc save:nil];
         [self loadBookmarks];
     }];
@@ -161,10 +167,19 @@ typedef enum ScrollDirection {
 
 -(void)loadBookmarks {
     NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"Bookmark"];
-    NSSortDescriptor *sortDescriptor1 = [[NSSortDescriptor alloc] initWithKey:@"bookmark" ascending:YES];
+    NSSortDescriptor *sortDescriptor1 = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
     request.sortDescriptors = @[sortDescriptor1];
     self.bookmarks = [self.moc executeFetchRequest:request error:nil];
     NSLog(@"%lu", self.bookmarks.count);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UINavigationController *nVC = segue.destinationViewController;
+    BookmarksTableViewController *vc = nVC.viewControllers[0];
+    vc.bookmarks = self.bookmarks;
+}
+
+-(IBAction)unwindMe:(UIStoryboardSegue *)segue {
 }
 
 @end

@@ -12,6 +12,6 @@
 
 @interface Bookmark : NSManagedObject
 
-@property (nonatomic, retain) NSString * bookmark;
+@property (nonatomic, retain) NSString * title;
 
 @end

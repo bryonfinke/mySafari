@@ -11,6 +11,6 @@
 
 @implementation Bookmark
 
-@dynamic bookmark;
+@dynamic title;
 
 @end

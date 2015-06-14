@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BookmarksTableViewController.h
 //  MySafari2
 //
 //  Created by Bryon Finke on 6/13/15.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BookmarksTableViewController : UITableViewController
 @property NSArray *bookmarks;
-
 @end
-
